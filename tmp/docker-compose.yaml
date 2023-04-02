@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  bee-frontend:
+    container_name: bee-frontend
+    image: ghcr.io/htl-leonding-project/leocloud-beeyond-frontend:latest
+    build: ../frontend-leocloud-beeyond
+    env_file: ../frontend-leocloud-beeyond/.env.development
+    environment:
+      - API_URL=https://student.cloud.htl-leonding.ac.at/m.remplbauer/api
+      - BASE_PATH=
+    ports:
+      - 3000:3000
+      - 3004:3004
